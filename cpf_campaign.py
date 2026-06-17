@@ -159,11 +159,13 @@ with col_form1:
     client_age = st.slider("Current Age Model", min_value=20, max_value=99, value=38)
     client_salary = st.number_input("Total Monthly Gross Ordinary Wage ($)", min_value=1000, value=8500, step=500)
     st.markdown('</div>', unsafe_allow_html=True)
-        st.markdown('<div class="form-sanctuary-panel"><div class="form-panel-header"><div class="form-panel-dot" style="background:#4A6B56; box-shadow:0 0 8px rgba(74,107,86,0.3);"></div>2. Active Structural Reserves</div>', unsafe_allow_html=True)
+
+    st.markdown('<div class="form-sanctuary-panel"><div class="form-panel-header"><div class="form-panel-dot" style="background:#4A6B56; box-shadow:0 0 8px rgba(74,107,86,0.3);"></div>2. Active Structural Reserves</div>', unsafe_allow_html=True)
     bal_oa = st.number_input("Ordinary Account (OA) Balance ($)", min_value=0, value=95000, step=5000)
     bal_sa = st.number_input("Special / Retirement Account (SA/RA) Balance ($)", min_value=0, value=70000, step=5000)
     bal_ma = st.number_input("Medisave Account (MA) Balance ($)", min_value=0, value=45000, step=5000)
     st.markdown('</div>', unsafe_allow_html=True)
+
 with col_form2:
     st.markdown('<div class="form-sanctuary-panel"><div class="form-panel-header"><div class="form-panel-dot" style="background:#8D99AE; box-shadow:0 0 8px rgba(141,153,174,0.3);"></div>3. Housing Asset Outflows</div>', unsafe_allow_html=True)
     using_housing = st.radio("Are you currently utilizing CPF capital to service an active property loan?", ["Yes, actively executing outflows", "No, asset is unencumbered / cash funded"])
@@ -172,6 +174,7 @@ with col_form2:
         housing_outflow = st.number_input("Monthly CPF Property Loan Withdrawal Amount ($)", min_value=0, value=2200, step=100)
         housing_years = st.number_input("Remaining Duration of Outstanding Loan (Years)", min_value=1, max_value=35, value=22, step=1)
     st.markdown('</div>', unsafe_allow_html=True)
+
     st.markdown('<div class="form-sanctuary-panel"><div class="form-panel-header"><div class="form-panel-dot" style="background:#3A4F41; box-shadow:0 0 8px rgba(58,79,65,0.4);"></div>4. Consultation Environment</div>', unsafe_allow_html=True)
     preferred_date = st.date_input("Preferred Strategy Session Date", min_value=datetime.date.today(), value=datetime.date.today() + datetime.timedelta(days=3))
     consult_mode = st.radio("Choose a Consultation Space Style:", [
