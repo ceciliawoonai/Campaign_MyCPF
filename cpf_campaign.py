@@ -3,7 +3,7 @@ import streamlit as st
 
 st.set_page_config(page_title="Sanctuary | Private Wealth Architecture", layout="wide")
 
-# --- CEC THERAPEUTIC DESIGN SYSTEM FOR WEALTH ARCHITECTURE ---
+# --- CEC THERAPEUTIC DESIGN SYSTEM WITH LOOPS CHIP ---
 st.markdown("""
 <style>
     /* Global Low-Arousal Calm Canvas Background */
@@ -88,13 +88,34 @@ st.markdown("""
         <span>The Workspace</span>
     </div>
 </div>
+""", unsafe_allow_html=True)
 
-<div class="cec-hero">
-    <div class="cec-hero-tag">Core Philosophy</div>
-    <div class="cec-hero-h1">We look past surface numbers to <span>treat your relationship with money.</span></div>
-    <div class="cec-hero-p">Wealth management is not a cold, one-off transaction. True financial stability requires patient guidance spanning long before, during, and after planning. We explicitly reject aggressive product sales to support your permanent independence, long-term capital efficiency, and complete peace of mind.</div>
-</div>
+# --- SPLIT LAYOUT INJECTING CINEMATIC LOOP PLAYER ---
+hero_col1, hero_col2 = st.columns([1.2, 1], gap="large")
 
+with hero_col1:
+    st.markdown("""
+    <div class="cec-hero" style="padding-left:0; padding-top:40px;">
+        <div class="cec-hero-tag">Core Philosophy</div>
+        <div class="cec-hero-h1">We look past surface numbers to <span>treat your relationship with money.</span></div>
+        <div class="cec-hero-p">Wealth management is not a cold, one-off transaction. True financial stability requires patient guidance spanning long before, during, and after planning. We explicitly reject aggressive product sales to support your permanent independence, long-term capital efficiency, and complete peace of mind.</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+with hero_col2:
+    st.markdown('<div style="padding-right: 45px; padding-top: 50px;">', unsafe_allow_html=True)
+    # Serves your local Photoleap looping MP4 clip smoothly across browsers
+    try:
+        with open("hero_motion.mp4", "rb") as video_file:
+            video_bytes = video_file.read()
+        st.video(video_bytes, autoplay=True, loop=True, muted=True)
+    except:
+        st.info("💡 Video Synchronization in Progress... Your cinematic loop is currently embedding into the cloud server cache layers.")
+    st.markdown('</div>', unsafe_allow_html=True)
+# =========================================================================
+# 🧭 PART 2A: SOVEREIGN CONDITIONS & SERVICE MODALITIES
+# =========================================================================
+st.markdown("""
 <div class="cec-section-title">Structural Service Modalities</div>
 <div class="cec-grid-container">
     <div class="cec-sanctuary-card">
@@ -113,11 +134,7 @@ st.markdown("""
         <div class="cec-card-desc">When income streams stall, we step in directly to optimize your corporate CV, share inside job leads, and actively map out new employment opportunities.</div>
     </div>
 </div>
-""", unsafe_allow_html=True)
-# =========================================================================
-# 🧭 PART 2: SOVEREIGN CONDITIONS, JOURNEY ROWS, & SCHEDULER SANCTUARY
-# =========================================================================
-st.markdown("""
+
 <div class="cec-section-title">Sovereign Conditions Treated</div>
 <div class="cec-grid-container">
     <div class="cec-sanctuary-card">
@@ -151,7 +168,11 @@ st.markdown("""
         <div class="cec-card-desc">Demystifying complex market jargon, crypto fads, and aggressive tech-sector volatility into calm, simple, and logical wealth preservation steps.</div>
     </div>
 </div>
-
+""", unsafe_allow_html=True)
+# =========================================================================
+# 🧭 PART 2B: TREATMENT JOURNEY, METRICS, & SCHEDULER SANCTUARY
+# =========================================================================
+st.markdown("""
 <div class="cec-section-title">The Treatment Journey</div>
 <div class="cec-grid-container">
     <div class="cec-sanctuary-card">
