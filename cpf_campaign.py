@@ -3,7 +3,7 @@ import streamlit as st
 
 st.set_page_config(page_title="Sanctuary | Private Wealth Architecture", layout="wide")
 
-# --- CEC THERAPEUTIC DESIGN SYSTEM WITH LOOPS CHIP ---
+# --- CEC THERAPEUTIC DESIGN SYSTEM WITH FLOATING LAYERS MATRIX ---
 st.markdown("""
 <style>
     /* Global Low-Arousal Calm Canvas Background */
@@ -28,20 +28,47 @@ st.markdown("""
         display: flex; gap: 2.5rem; font-size: 13px; color: #6E7570; letter-spacing: 0.5px;
     }
     
-    /* Sanctuary Header Layout Group */
-    .cec-hero {
-        padding: 80px 60px 40px 60px; max-width: 900px;
+    /* THE SIGNATURE CEC TEAL SANCTUARY VIEWPORT CANVAS BLOCK */
+    .cec-teal-canvas-container {
+        background-color: #2F4A4E !important; /* Premium therapeutic teal blue */
+        border-radius: 32px;
+        margin: 20px 45px 40px 45px;
+        padding: 80px 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 20px 50px rgba(47, 74, 78, 0.12);
+        position: relative;
+        overflow: hidden;
     }
-    .cec-hero-tag {
-        font-size: 11px; text-transform: uppercase; letter-spacing: 3px;
-        color: #4A7C59; margin-bottom: 20px; font-weight: 600;
+    
+    /* Animated Floating Background Cloud Layers Passing Behind */
+    .cec-teal-canvas-container::before {
+        content: ''; position: absolute; top: 0; left: 0; width: 200%; height: 100%;
+        background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 60%);
+        animation: slowDriftClouds 25s linear infinite;
+        pointer-events: none; z-index: 1;
     }
-    .cec-hero-h1 {
-        font-family: 'Playfair Display', serif; font-size: 44px; font-weight: 400;
-        line-height: 1.3; color: #1F2421; margin-bottom: 25px; letter-spacing: -0.5px;
+    @keyframes slowDriftClouds {
+        0% { transform: translateX(0%); }
+        100% { transform: translateX(-50%); }
     }
-    .cec-hero-h1 span { font-style: italic; color: #4A7C59; }
-    .cec-hero-p { font-size: 16px; color: #6E7570; line-height: 1.8; }
+    
+    .canvas-text-block { position: relative; z-index: 10; max-width: 550px; color: #FFFFFF !important; }
+    .cec-hero-tag { font-size: 11px; text-transform: uppercase; letter-spacing: 3px; color: #A3C1AD; margin-bottom: 20px; font-weight: 600; }
+    .cec-hero-h1 { font-family: 'Playfair Display', serif; font-size: 44px; font-weight: 400; line-height: 1.3; margin-bottom: 25px; letter-spacing: -0.5px; color: #FFFFFF !important; }
+    .cec-hero-h1 span { font-style: italic; color: #E8F0EC; }
+    .cec-hero-p { font-size: 16px; color: #E8F0EC; line-height: 1.8; opacity: 0.95; }
+    
+    /* FLOATING SILHOUETTE IMAGE HOLDER CONTAINER */
+    .cec-floating-lady-portrait {
+        position: relative; z-index: 5; max-width: 420px; width: 100%;
+        animation: calmBreathingPulse 6s ease-in-out infinite;
+    }
+    @keyframes calmBreathingPulse {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-6px); } /* Ambient, organic breathing lift movement */
+    }
     
     /* Grid Layout Framework System Blocks */
     .cec-section-title {
@@ -88,34 +115,16 @@ st.markdown("""
         <span>The Workspace</span>
     </div>
 </div>
-""", unsafe_allow_html=True)
 
-# --- SPLIT LAYOUT INJECTING CINEMATIC LOOP PLAYER ---
-hero_col1, hero_col2 = st.columns([1.2, 1], gap="large")
-
-with hero_col1:
-    st.markdown("""
-    <div class="cec-hero" style="padding-left:0; padding-top:40px;">
+<div class="cec-teal-canvas-container">
+    <div class="canvas-text-block">
         <div class="cec-hero-tag">Core Philosophy</div>
         <div class="cec-hero-h1">We look past surface numbers to <span>treat your relationship with money.</span></div>
         <div class="cec-hero-p">Wealth management is not a cold, one-off transaction. True financial stability requires patient guidance spanning long before, during, and after planning. We explicitly reject aggressive product sales to support your permanent independence, long-term capital efficiency, and complete peace of mind.</div>
     </div>
-    """, unsafe_allow_html=True)
+    <img class="cec-floating-lady-portrait" src="https://unsplash.com" alt="Sovereign Portrait">
+</div>
 
-with hero_col2:
-    st.markdown('<div style="padding-right: 45px; padding-top: 50px;">', unsafe_allow_html=True)
-    # Serves your local Photoleap looping MP4 clip smoothly across browsers
-    try:
-        with open("hero_motion.mp4", "rb") as video_file:
-            video_bytes = video_file.read()
-        st.video(video_bytes, autoplay=True, loop=True, muted=True)
-    except:
-        st.info("💡 Video Synchronization in Progress... Your cinematic loop is currently embedding into the cloud server cache layers.")
-    st.markdown('</div>', unsafe_allow_html=True)
-# =========================================================================
-# 🧭 PART 2A: SOVEREIGN CONDITIONS & SERVICE MODALITIES
-# =========================================================================
-st.markdown("""
 <div class="cec-section-title">Structural Service Modalities</div>
 <div class="cec-grid-container">
     <div class="cec-sanctuary-card">
@@ -134,7 +143,11 @@ st.markdown("""
         <div class="cec-card-desc">When income streams stall, we step in directly to optimize your corporate CV, share inside job leads, and actively map out new employment opportunities.</div>
     </div>
 </div>
-
+""", unsafe_allow_html=True)
+# =========================================================================
+# 🧭 PART 2: SOVEREIGN CONDITIONS, JOURNEY ROWS, & SCHEDULER SANCTUARY
+# =========================================================================
+st.markdown("""
 <div class="cec-section-title">Sovereign Conditions Treated</div>
 <div class="cec-grid-container">
     <div class="cec-sanctuary-card">
@@ -168,11 +181,7 @@ st.markdown("""
         <div class="cec-card-desc">Demystifying complex market jargon, crypto fads, and aggressive tech-sector volatility into calm, simple, and logical wealth preservation steps.</div>
     </div>
 </div>
-""", unsafe_allow_html=True)
-# =========================================================================
-# 🧭 PART 2B: TREATMENT JOURNEY, METRICS, & SCHEDULER SANCTUARY
-# =========================================================================
-st.markdown("""
+
 <div class="cec-section-title">The Treatment Journey</div>
 <div class="cec-grid-container">
     <div class="cec-sanctuary-card">
